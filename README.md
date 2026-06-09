@@ -1,0 +1,1 @@
+This is a project website just for the funsies and learning
