@@ -7,13 +7,13 @@ let text = document.getElementById("text");
 async function fetchText() {
     try {
         if (currentLanguage === "en") {
-            const response = await fetch("textEng.txt");
+            const response = await fetch("engText.txt");
             textResponse = await response.text();
             text.textContent = textResponse;
             log("Text fetched successfully:", textResponse);
         }
         else {
-            const response = await fetch("textPtBr.txt");
+            const response = await fetch("ptbrText.txt");
             textResponse = await response.text();
             text.textContent = textResponse;
             log("Text fetched successfully:", textResponse);
@@ -26,12 +26,12 @@ async function fetchText() {
 
 btnChangeLanguage.addEventListener("click", () => {
     if (currentLanguage === "pt-br") {
-        buttonText.textContent = "ENG";
+        buttonText.textContent = "ENG/PTBR";
         currentLanguage = "en";
         fetchText();
     }
     else {
-        buttonText.textContent = "PTBR";
+        buttonText.textContent = "PTBR/ENG";
         currentLanguage = "pt-br";
         fetchText();
     }
